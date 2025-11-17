@@ -121,7 +121,7 @@ After a plan is created **and Phase 0 research is complete**, this command analy
 
 1. **Inputs**: Reads `plan.md` (required) and, if present, `data-model.md`, `contracts/`, `research.md` (from `spec-kitty research`), and `quickstart.md`.
 2. **Task Derivation**: Converts contracts, entities, and scenarios into fine-grained subtasks (`Txxx`), marking safe parallelization with `[P]`.
-3. **Work Package Grouping**: Rolls the subtasks into at most ten work packages (`WPxx`), each aligned with a user story or cohesive subsystem so teams can deliver in independent slices.
+3. **Work Package Grouping**: Rolls the subtasks into 8-20 review-optimized work packages (`WPxx`) with 5-8 subtasks each, each aligned with a user story or cohesive subsystem so teams can deliver in independent slices with focused code reviews.
 4. **Prompt Generation**: Builds the `/tasks/` mini-board directories, writes one prompt file per work package in `tasks/planned/` using the bundle template (complete with metadata and implementation detail), and links each package from `tasks.md`.
 5. **Outputs**: Produces `tasks.md` plus the populated `/tasks/planned/` directory so implementers can immediately move bundled work into `/tasks/doing/` and start building.
 

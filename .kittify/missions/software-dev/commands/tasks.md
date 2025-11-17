@@ -64,9 +64,9 @@ The script will fail if you're not in a feature worktree. This is intentional - 
    - Maintain the subtask list internally; it feeds the work-package roll-up and the prompts.
 
 4. **Roll subtasks into work packages** (IDs `WP01`, `WP02`, ...):
-   - Target 4–10 work packages. Each should be independently implementable, rooted in a single user story or cohesive subsystem.
+   - Target 8–20 work packages optimized for review size. Each should be independently implementable with 5-8 subtasks maximum, rooted in a single user story or cohesive subsystem.
    - Ensure every subtask appears in exactly one work package.
-   - Name each work package with a succinct goal (e.g., “User Story 1 – Real-time chat happy path”).
+   - Name each work package with a succinct goal (e.g., "User Story 1 – Real-time chat happy path").
    - Record per-package metadata: priority, success criteria, risks, dependencies, and list of included subtasks.
 
 5. **Write `tasks.md`** using `.kittify/templates/tasks-template.md`:
@@ -119,8 +119,9 @@ The combination of `tasks.md` and the bundled prompt files must enable a new eng
 
 2. **Work package grouping**:
    - Map subtasks to user stories or infrastructure themes.
-   - Keep each work package laser-focused on a single goal; avoid mixing unrelated stories.
-   - Do not exceed 10 work packages. Merge low-effort items into broader bundles when necessary.
+   - Keep each work package laser-focused on a single goal with 5-8 subtasks maximum; avoid mixing unrelated stories.
+   - Target 8-20 work packages. Split larger work into smaller reviewable chunks when necessary to maintain review quality.
+   - Each work package should represent a single pull request worth of changes.
 
 3. **Prioritisation & dependencies**:
    - Sequence work packages: setup → foundational → story phases (priority order) → polish.
@@ -131,4 +132,10 @@ The combination of `tasks.md` and the bundled prompt files must enable a new eng
    - Provide actionable implementation and test guidance per subtask—short for trivial work, exhaustive for complex flows.
    - Surface risks, integration points, and acceptance gates clearly so reviewers know what to verify.
 
-5. **Think like a tester**: Any vague requirement should be tightened until a reviewer can objectively mark it done or not done.
+5. **Review-optimized sizing**:
+   - Limit work packages to 5-8 subtasks for optimal code review size.
+   - Prefer 15-20 smaller work packages over 5-10 large ones for better change management.
+   - Split logically even within a user story if it exceeds 8 subtasks.
+   - Smaller, focused reviews enable faster feedback loops and better quality control.
+
+6. **Think like a tester**: Any vague requirement should be tightened until a reviewer can objectively mark it done or not done.
